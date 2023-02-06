@@ -1,0 +1,132 @@
+:root{
+    --Darkcyan-primary-400: hsl(158, 36%, 37%);
+    --Darkcyan-primary-500: hsl(158, 37%, 15%);
+    --Cream-secondary-200: hsl(30, 38%, 92%);
+
+    --Verydarkblue-neutral-900: hsl(212, 21%, 14%);
+    --Darkgrayishblue-neutral-400: hsl(228, 12%, 48%);
+    --White-neutral-100: hsl(0, 0%, 100%);
+
+    --ffaccent: 'Fraunces', serif;
+    --ffbase: 'Montserrat', sans-serif;
+
+    --fwregular: 500;
+    --fwbold: 700;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: var(--ffbase);
+    font-weight: var(--fwregular);
+    font-size: 0.91rem;
+    color: var(--Darkgrayishblue-neutral-400);
+    background-color: var(--Cream-secondary-200);
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+
+.productGroup {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.vHidden:not(:focus):not(:active){
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.product{
+    height: auto;
+
+    --productpadding: 1.5rem;
+    --productspacing: 1rem;
+
+    display: grid;
+    background-color: var(--White-neutral-100);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 700px;
+}
+@media (min-width: 600px){
+    .product {
+        --productpadding: 2.8rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.Content {
+    padding: 35px;
+}
+.type {
+    font-size: 0.8125rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+.Title {
+    font-size: 2rem;
+    font-family: var(--ffaccent);
+    color: var(--Verydarkblue-neutral-900);
+}
+.productPrice {
+    font-size: 2rem;
+    font-family: var(--ffaccent);
+    color: var(--Darkcyan-primary-400);
+}
+.button[data-icon=shoppingCart]::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(images/icon-cart.svg);
+}
+.button {
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.55rem;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.85em 0.4em;
+    background-color: var(--Darkcyan-primary-400);
+    color: var(--White-neutral-100);
+    font-weight: var(--fwbold);
+    font-size: 1rem;
+}
+.button:is(:hover, :focus){
+    background-color: var(--Darkcyan-primary-500);
+}
+
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    }
+
+    img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    input, button, textarea, select {
+        font: inherit;
+    }
+
+    p {
+        overflow-wrap: break-word;
+    }
+    h1 {
+        line-height: 1.1;
+        overflow-wrap: break-word;
+    }
